@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Generator</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body class="bgAnimation">
+    <div class="home-container">
+        <h1 class="home-text">
+          <!-- <br /> -->
+          <span>&quot;Architecting Resilient, Scalable,</span>
+          <!-- <br /> -->
+          <span>   and Secure Image Generation -</span>
+          <!-- <br /> -->
+          <span>AWS Elastic Beanstalk and CloudFront&quot;</span>
+          
+        </h1>
+      </div>
+    <div class="container bgAnimation">
+        <h1>Image Generator</h1>
+        <div>
+        <form method="POST" action="/">
+            <label for="prompt">Enter Prompt:</label><br>
+            <input type="text" id="prompt" name="prompt" required><br>
+            <button type="submit">Generate Image</button>
+        </form>
+        <div id="image-container">
+            {% if image_data %}
+                <img src="data:image/png;base64,{{ image_data }}" alt="Generated Image">
+            {% endif %}
+        </div>
+    </div>
+    </div>
+</body>
+</html>
